@@ -1,5 +1,5 @@
 import { question } from "readline-sync";
-import { commandReact, commandVue, getUsersCommands, runCommandsArgs, } from "./Commads.Logger.js";
+import { commandReact, commandVue, getUsersCommands, } from "../Commands/Commads.Logger.js";
 import { spawn } from "child_process";
 var OnError;
 (function (OnError) {
@@ -25,7 +25,7 @@ function init() {
     }
     let quest = {
         projectName: q,
-        args: ["React", "/Vue"],
+        args: [TypeAppCommand.React, TypeAppCommand.Vue],
         getOnlineCommands() {
             this.args.forEach((arg) => {
                 console.log(arg);
@@ -44,7 +44,7 @@ function init() {
     }
     quest = {
         projectName: q,
-        args: ["React", "/Vue"],
+        args: [TypeAppCommand.React, TypeAppCommand.Vue],
         getOnlineCommands() {
             this.args.forEach((arg) => {
                 console.log(arg);

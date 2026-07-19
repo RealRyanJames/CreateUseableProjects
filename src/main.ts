@@ -4,7 +4,7 @@ import {
   commandVue,
   getUsersCommands,
   type LoggedArgsProject,
-} from "./Commads.Logger.js";
+} from "../Commands/Commads.Logger.js";
 
 type ObjectLang = "React" | "Vue" | "Other";
 
