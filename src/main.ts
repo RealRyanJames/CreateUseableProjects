@@ -3,11 +3,12 @@ import {
   commandReact,
   commandVue,
   getUsersCommands,
-  runCommandsArgs,
   type LoggedArgsProject,
 } from "./Commads.Logger.js";
 
-type R = Record<"React" | "Vue", string>;
+type ObjectLang = "React" | "Vue" | "Other";
+
+type R = Record<ObjectLang, string>;
 
 import { spawn } from "child_process";
 
@@ -19,6 +20,7 @@ enum OnError {
 let TypeAppCommand: R = {
   Vue: "/V",
   React: "/R",
+  Other: String(""),
 };
 
 function init() {
@@ -36,7 +38,7 @@ function init() {
   }
   let quest: LoggedArgsProject = {
     projectName: q,
-    args: ["React", "/Vue"],
+    args: [TypeAppCommand.React, TypeAppCommand.Vue],
     getOnlineCommands() {
       this.args.forEach((arg) => {
         console.log(arg);
@@ -56,7 +58,7 @@ function init() {
   }
   quest = {
     projectName: q,
-    args: ["React", "/Vue"],
+    args: [TypeAppCommand.React, TypeAppCommand.Vue],
     getOnlineCommands() {
       this.args.forEach((arg) => {
         console.log(arg);
