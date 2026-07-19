@@ -7,6 +7,8 @@ import {
   type LoggedArgsProject,
 } from "./Commads.Logger.js";
 
+type R = Record<"React" | "Vue", string>;
+
 import { spawn } from "child_process";
 
 enum OnError {
@@ -14,12 +16,17 @@ enum OnError {
   Completed = 200,
 }
 
+let TypeAppCommand: R = {
+  Vue: "/V",
+  React: "/R",
+};
+
 function init() {
   let errLogged: OnError = OnError.NotFound;
 
   const q = question("Enter Project Type: ").toUpperCase();
 
-  if (q.length > 1 && q.includes("/R")) {
+  if (q.length > 1 && q.includes(TypeAppCommand.React)) {
     const commands = spawn("cmd", ["/c", commandReact]);
     commands.stdout.on("data", (data) => console.log("data: " + data));
     commands.on("close", (data) => console.log("err: " + data));
@@ -39,7 +46,7 @@ function init() {
 
   console.log(getUsersCommands(quest));
 
-  if (q.length > 1 && q.includes("/V")) {
+  if (q.length > 1 && q.includes(TypeAppCommand.Vue)) {
     const commands = spawn("cmd", ["/c", commandVue]);
     commands.stdout.on("data", (data) => console.log("data: " + data));
     commands.on("close", (data) => console.log("err: " + data));
