@@ -12,6 +12,8 @@
   "type": "module",
   "dependencies": {
     "@types/node": "^26.1.1",
-    "@typescript/native-preview": "^7.0.0-dev.20260707.2"
+    "@types/readline-sync": "^1.4.8",
+    "@typescript/native-preview": "^7.0.0-dev.20260707.2",
+    "readline-sync": "^1.4.10"
   }
 }
