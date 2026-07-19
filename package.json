@@ -1,0 +1,17 @@
+{
+  "name": "createuseableprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsgo": "tsgo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^26.1.1",
+    "@typescript/native-preview": "^7.0.0-dev.20260707.2"
+  }
+}
